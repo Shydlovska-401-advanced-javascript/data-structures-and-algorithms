@@ -1,3 +1,4 @@
+// Solution for the my interview
 // 1. Domain problem 
 // Write a function which takes the matrix. Get the sum of each tow. Add sums to the new arr and retern new arr with sums.
                   // j[0], j[1], j[2]
