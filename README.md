@@ -10,8 +10,15 @@
 
 #### [Code Challenges](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms)
 
-   * [array-reverse]()
+   * [array-reverse](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/arraReverse/array-reveverse.js)
 
-   * [array-shift]()
+   * [array-shift](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/arrayShift/array-shift.js)
+
+   * [binary-search](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/arrayBinarySearch/array-binary-search.js)
+
+   * [moc-interview](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/mock_interview/matrix.js)
+
+   * [linked_list](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/data-Structures/linked-list.js)
+
 
   
