@@ -26,11 +26,8 @@ class Node {
         this.head = newNode;
       }else{
        let current = this.head;
-       while(current.next){
-         current = current.next;
-       }
-       current.next = newNode;
-      }
+      this.head = newNode;
+      this.head.next = current;
       this.size++;
     }
   
