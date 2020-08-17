@@ -28,8 +28,8 @@ class Node {
         let current = this.head;
        this.head = newNode;
        this.head.next = current;
-       this.size++;
      }
+     this.size++;
     }
   
   includes(val){
@@ -98,15 +98,19 @@ class Node {
       let inserted = new Node(newVal);
       let current = this.head;
       let next = current.next
+      let flag = false;
        while(next){
          if(current.val === val){
            current.next = inserted;
            inserted.next = next;
-           
+           flag = true;  
          }
          current = current.next;
          next = next.next;
        }
+        if(!flag){
+           this.append(newVal)
+         }
         this.size++;
     }
   } 
