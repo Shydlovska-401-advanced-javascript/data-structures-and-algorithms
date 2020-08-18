@@ -3,13 +3,6 @@
 // const Node = require('./linked-list.js');
 const LinkedList = require('../../data-Structures/linked-list.js')
 
-
-// 
-
-// 
-
-// 
-
 it('Can successfully instantiate an empty linked list', () => {
     const linkedlist = new LinkedList();
     expect(linkedlist !== null).toBe(true);
@@ -29,7 +22,7 @@ it('The head property will properly point to the first node in the linked list',
 
 it('Can properly insert multiple nodes into the linked list', () => {
     const linkedlist = new LinkedList();
-    linkedlist.insert('a');
+    linkedlist.insert('d');
     linkedlist.insert('b');
     linkedlist.insert('c');
     expect(linkedlist.size).toBe(3)
@@ -52,8 +45,8 @@ it('Will return false when searching for a value in the linked list that does no
 
 it('Can properly return a collection of all the values that exist in the linked list', () => {
     const linkedlist = new LinkedList();
-    linkedlist.insert('a');
-    linkedlist.insert('b');
     linkedlist.insert('c');
+    linkedlist.insert('b');
+    linkedlist.insert('a');
     expect(linkedlist.toString()).toBe('{ a } -> { b } -> { c } -> NULL')
 });
