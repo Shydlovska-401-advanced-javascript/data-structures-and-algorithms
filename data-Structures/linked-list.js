@@ -110,10 +110,27 @@ class Node {
        }
         if(!flag){
            this.append(newVal)
+        }else{
+            this.size++;
          }
-        this.size++;
-    }
   } 
+
+  findK(k){
+    if(this.size < k || k < 0){
+      return 'Not in the list!'
+    }
+    let current = this.head;
+    let counter = this.size - k -1;
+    while(counter > 0){
+      console.log('here',counter)
+    current = current.next;
+    counter--;
+    }
+    return current.val;
+    }
+    
+    
+}
   
   let node = new LinkedList();
   // node.insert('a')
@@ -127,6 +144,7 @@ class Node {
 // newList.insertBefore(3, 8)
 // newList.insertAfter(8, 0)
 // newList.insertAfter(0, 9)
+// console.log(newList.findK(11))
 // newList.toString()
   // console.log(node.toString())
 
