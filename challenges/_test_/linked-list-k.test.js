@@ -2,7 +2,6 @@
 
 const LinkedList = require('../../data-Structures/linked-list.js')
 
-
 it('Where k is greater than the length of the linked list', () => {
     const linkedlist  = new LinkedList();
     linkedlist.insert('a');
@@ -33,8 +32,7 @@ it('“Happy Path” where k is not at the end, but somewhere in the middle of t
     const linkedlist  = new LinkedList();
     linkedlist.insert('a');
     linkedlist.insert('b');
-    linkedlist.insert('c');
-    
+    linkedlist.insert('c'); 
     expect(linkedlist.findK('1')).toBe('b');
 });
 
