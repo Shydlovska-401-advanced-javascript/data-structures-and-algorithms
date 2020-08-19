@@ -20,5 +20,9 @@
 
    * [linked_list](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/data-Structures/linked-list.js)
 
+    * [linked_list- zip](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/llzip/ll-zip.js)
+
+
+
 
   
