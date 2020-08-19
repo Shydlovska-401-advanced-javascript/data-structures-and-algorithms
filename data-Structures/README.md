@@ -61,3 +61,7 @@ Bog O
 time: O (N)
 space: O (1)
 
+
+## Solution
+![whiteboard](findk.jpg)
+
