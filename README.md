@@ -22,6 +22,16 @@
 
    * [linked_list_zip](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/llzip/ll-zip.js)
 
+    * [linked_list_findK]()
+
+    * [linked_list_reverse&&isPalindrome](https://github.com/Shydlovska-401-advanced-javascript/data-structures-and-algorithms/blob/master/challenges/mock_interview/ll.js)
+
+    * [lqueue_stack]()
+
+
+
+
+
 
 
 
