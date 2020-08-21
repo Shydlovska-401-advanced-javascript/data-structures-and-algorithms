@@ -23,7 +23,6 @@ class Node{
       this.size-=1;
       return poped.val;
       
-  
     }
     peek(){
        if(!this.top){
@@ -41,15 +40,14 @@ class Node{
   
     }
   }
-  
+
+
   class Queue{
     constructor(){
       this.front = null;
       this.tail = null;
       this.size =0;
-  
     }
-  
     enqueue(val){
       if(!this.front){
         this.front = new Node(val);
@@ -69,17 +67,14 @@ class Node{
       this.front = this.front.next;
       this.size -=1;
       return poped.val;
-  
     }
-  
     peek(){
     if(!this.front){
       return 'Empty queue'
     }else{
       return this.front.val;
     }
-    }
-  
+  }
     isEmpty(){
       if(!this.front){
         return true
@@ -89,12 +84,10 @@ class Node{
   
     }
   }
-  
   let stack = new Stack();
   // stack.push(1)
   // stack.push(2)
   // stack.push(3)
-  // // console.log(stack)
   // // stack.peek();
   // // stack.pop()
   // // console.log(stack)
