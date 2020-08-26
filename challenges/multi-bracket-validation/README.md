@@ -13,7 +13,6 @@ Big (O)
 time: O(N)
 space: O(N)
 
-
 ## Solution
 ![pseudocode](brackets.png)
 
