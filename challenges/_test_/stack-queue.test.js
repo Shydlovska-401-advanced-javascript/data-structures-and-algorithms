@@ -54,12 +54,10 @@ describe('describe Queue', () => {
 
 
  it('Should instance an empty queue', () => {
-    // const queue  = new Queue();
      expect(queue).toBeDefined();
 });
 
 it('Can succesfully add multiple onto a queue', () => {
-    // const queue = new Queue();
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
@@ -67,13 +65,11 @@ it('Can succesfully add multiple onto a queue', () => {
 });
 
 it('Can succesfully add  val onto a queue', () => {
-//    const queue = new Queue();
     queue.enqueue(1);
     expect(queue.peek()).toBe(1)
 });
 
 it('Can succesfully take off val from  queue', () => {
-    // const queue = new Queue();
      queue.enqueue(1);
      queue.enqueue(2);
      queue.enqueue(3);
