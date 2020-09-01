@@ -61,8 +61,10 @@ class Node{
   // console.log(tree)
   console.log(tree.findMax());
 
-  module.exports = BinaryTree;
-  
+  module.exports = {
+      BinaryTree: BinaryTree,
+      Node: Node
+  }
   
   
   
