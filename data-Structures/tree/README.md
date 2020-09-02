@@ -1,5 +1,5 @@
 
-# Stacks and Queues
+# BinaryTree
 Implement BinarySearch and BinaryTree
 
 ## Challenge
