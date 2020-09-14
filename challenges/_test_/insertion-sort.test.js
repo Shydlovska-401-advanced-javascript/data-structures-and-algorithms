@@ -1,4 +1,5 @@
 'use strict';
+
 const sort = require('../insertion_sort/insertion_sort.js');
 
 it('should return null if array is empty (edge case)', ()=>{

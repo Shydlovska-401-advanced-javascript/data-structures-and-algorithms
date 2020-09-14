@@ -1,5 +1,3 @@
-
-
 ## Challenge Description
 Implement insertion sort.
 
