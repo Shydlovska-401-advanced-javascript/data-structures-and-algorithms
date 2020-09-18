@@ -30,7 +30,7 @@ class HashTable {
           return this.buckets[num][key];
         }
       }
-      return "not found"
+      return null
     }
   
     contains(key) {
