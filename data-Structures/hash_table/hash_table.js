@@ -1,55 +1,86 @@
-class HashTable {
-    constructor(size) {
-      this.size = size;
+class Hashtable {
+
+    constructor(size=1024) {
       this.buckets = new Array(size);
-    }
-    hash(key) {
-      if (typeof (key) === 'string') {
-        return key.length % this.size;
-      } else {
-        return key % this.size;
-      }
     }
   
     add(key, value) {
-      let bucketNum = this.hash(key);
-      let obj = this.buckets[bucketNum];
-      if (obj) {
-        obj[key] = value;
+  
+      const index = this.hash(key);
+  
+      const contentsOfBucket = this.buckets[index];
+  
+      if(contentsOfBucket === undefined) {
+        this.buckets[index] = [ [key, value] ];
       } else {
-        let newObj = {};
-        newObj[key] = value;
-        this.buckets[bucketNum] = newObj;
+        // what to do now???
+        let inserted = false;
+        for(let i=0; i< contentsOfBucket.length; i++){
+          if(contentsOfBucket[i][0] === key){
+            contentsOfBucket[i][1] === value;
+            inserted =true;
+          }
+        }
+        if(inserted === false){
+          contentsOfBucket.push([key, value])
+        }
       }
     }
   
     get(key) {
-      let num = this.hash(key);
-      if (this.buckets[num]) {
-        if (this.buckets[num][key]) {
-          return this.buckets[num][key];
+  
+      const index = this.hash(key);
+  
+      const itemsInBucket = this.buckets[index];
+  
+      if(itemsInBucket) {
+        // should have array of key,value pairs
+        // [ ['cas',43], ['jb',32] ]
+        for(let item of itemsInBucket) {
+          if(item[0] === key) {
+            return item[1];
+          }
         }
       }
-      return null
+  
+      return null; 
     }
   
     contains(key) {
-        let num = this.hash(key);
-        if (this.buckets[num]) {
-          if (this.buckets[num][key]) {
-            return true;
-          }
-        }
+      const index = this.hash(key);
+  
+      if(this.buckets[index] === undefined) {
         return false;
       }
   
+      return true;
+    }
+  
+    hash(key) {
+  
+    let sum = 0;
+  
+    for(let char of key) {
+      sum += char.charCodeAt(0);
+    }
+  
+    const primed = sum * 599;
+  
+    const index = primed % this.buckets.length;
+  
+    return index;
+  
+    }
+  
   }
+
+  module.exports = Hashtable;
   
-  let table = new HashTable(15);
+//   let hashT= new Hashtable();
   
-  table.put(25, 'kate');
-  table.put(29, 'andrii')
-  table.put(5, 'hulk')
-  
-  console.log(table.get(25));
-  console.log(table.get('kjhj'));
+//   hashT.add('kate', '3')
+//   hashT.add('hulk', '4')
+//   hashT.add('mac', '2')
+//   hashT.get('hulk')
+//   hashT.contains('hulk')
+//   // console.log(hashT)
