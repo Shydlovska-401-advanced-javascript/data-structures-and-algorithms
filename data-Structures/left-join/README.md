@@ -11,6 +11,6 @@ Avoid utilizing any of the library methods available to your language.
 
 ## Approach & Efficiency
 Big O
-time:
-space:
+time:O(n)
+space:O(1)
 
