@@ -1,0 +1,2 @@
+## Solution
+![whiteboard](whiteboard.png)

@@ -1,18 +1,29 @@
-// 'use strict';
+'use strict';
 
-// const Graph = require('./breadth-first-graph.js');
+const Graph = require('./breadth-first-graph.js');
 
-// let graph = new Graph;
+let graph = new Graph()
 
-// it('Happy path', () => {
+let austin = graph.addVertex('Austin')
+let dallas= graph.addVertex('Dallas')
+let huston = graph.addVertex('Huston')
+let sverdlovs = graph.addVertex('Sverdlovsk')
+let chernovci = graph.addVertex('Chernovci')
+let hawaii = graph.addVertex('Hawaii')
 
-//   expect().toBe();
-// });
 
-// it('Edge cases', () => {
-//   expect().toBe(); 
-// });
+graph.addEdge(austin, sverdlovs, 100)
 
-// it('Fail', () => {
-//     expect().toBe(); 
-//   });
+graph.addEdge(austin, chernovci, 20)
+graph.addEdge(austin, hawaii, 15)
+graph.addEdge(sverdlovs, chernovci, 7)
+graph.addEdge(chernovci, dallas)
+graph.addEdge(dallas, huston)
+
+
+
+it('Happy path', () => {
+
+  expect(graph.breadthFirstGraph(austin)).toEqual(['Austin', 'Sverdlovsk', 'Chernovci', 'Hawaii', 'Dallas', 'Huston']);
+});
+

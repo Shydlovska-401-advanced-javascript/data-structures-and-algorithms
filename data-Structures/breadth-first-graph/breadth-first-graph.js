@@ -2,7 +2,7 @@ class Edges{
     constructor(node1, node2, weight=1){
         this.origin = node1;
         this.destination = node2;
-        this.weight =weight;
+        this.weight = weight;
     }
 }
 
@@ -47,32 +47,28 @@ class Graph{
     size(){
       return this.vertices.length;
     }
-
+    
     breadthFirstGraph(vertex){
-    let queue = [];
-    let explored = {};
-    queue.push(vertex);
-
-   explored[vertex] = 'found';
-   console.log(explored);
-
-   while (queue.length > 0) {
-      let ver = queue.shift();
-
-  
-      this.edges[ver]
-      .map(e => e.destination)
-      .forEach(n => {
-        if(!explored[n]) {
-          explored[n] = 'found';
-          queue.push(n);
-        }
-        // console.log(explored)
-      });
-   }
-  //  console.log(explored)
-   return Object.keys(explored);
-}
+        let queue = [];
+        let explored = new Map();
+        queue.push(vertex);
+    
+       explored.set(vertex, true);
+    
+       while (queue.length > 0) {
+          let ver = queue.shift();
+          this.edges[ver]
+          .map(e => e.destination)
+          .forEach(n => {
+            if(explored.has(n) === false) {
+              explored.set(n, true);
+              queue.push(n);
+            }
+          });
+       }
+       return Array.from(explored.keys()).map(v => v.val);
+    }
+    
 }
 
 
@@ -88,7 +84,7 @@ graph.addEdge(nodeMac, nodeHulk)
 graph.addEdge(nodeKate, nodeMac)
 
 console.log(nodeKate)
-graph.breadthFirstGraph(nodeKate).length
+graph.breadthFirstGraph(nodeKate)
 
 // console.log(graph.getNeigbors(nodeKate))
 

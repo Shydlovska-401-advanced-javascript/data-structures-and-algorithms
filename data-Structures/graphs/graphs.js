@@ -49,6 +49,21 @@ class Graph{
     size(){
       return this.vertices.length;
     }
+  
+    getNeigborsByValue(vertexVal){
+        let vert = this.vertices.filter(v => v.val === vertexVal);
+        if (vert.length > 0) {
+          return this.getNeigbors(vert[0])
+        } else {
+          return null;
+        }
+      }
+  
+      getVertexByValue(vertexVal){
+        let vert = this.vertices.filter(v => v.val === vertexVal);
+        return vert ? vert[0] : null;
+      }
+  
 
 }
 
