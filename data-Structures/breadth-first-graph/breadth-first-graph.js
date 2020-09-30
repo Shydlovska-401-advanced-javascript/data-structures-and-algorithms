@@ -1,10 +1,8 @@
-'use strict';
-
 class Edges{
     constructor(node1, node2, weight=1){
         this.origin = node1;
         this.destination = node2;
-        this.weight =weight;
+        this.weight = weight;
     }
 }
 
@@ -49,36 +47,47 @@ class Graph{
     size(){
       return this.vertices.length;
     }
-  
-    getNeigborsByValue(vertexVal){
-        let vert = this.vertices.filter(v => v.val === vertexVal);
-        if (vert.length > 0) {
-          return this.getNeigbors(vert[0])
-        } else {
-          return null;
-        }
-      }
-  
-      getVertexByValue(vertexVal){
-        let vert = this.vertices.filter(v => v.val === vertexVal);
-        return vert ? vert[0] : null;
-      }
-  
-
+    
+    breadthFirstGraph(vertex){
+        let queue = [];
+        let explored = new Map();
+        queue.push(vertex);
+    
+       explored.set(vertex, true);
+    
+       while (queue.length > 0) {
+          let ver = queue.shift();
+          this.edges[ver]
+          .map(e => e.destination)
+          .forEach(n => {
+            if(explored.has(n) === false) {
+              explored.set(n, true);
+              queue.push(n);
+            }
+          });
+       }
+       return Array.from(explored.keys()).map(v => v.val);
+    }
+    
 }
 
-module.exports = Graph;
 
+let graph = new Graph()
 
-// let graph = new Graph()
+let nodeKate = graph.addVertex('Kate')
+let nodeHulk= graph.addVertex('Hulk')
+let nodeMac = graph.addVertex('Mac')
 
-// let nodeKate = graph.addVertex('Kate')
-// let nodeHulk= graph.addVertex('Hulk')
-// let nodeMac = graph.addVertex('Mac')
+graph.addEdge(nodeKate, nodeHulk)
 
-// graph.addEdge(nodeKate, nodeHulk)
+graph.addEdge(nodeMac, nodeHulk)
+graph.addEdge(nodeKate, nodeMac)
 
-// graph.addEdge(nodeMac, nodeHulk)
-// graph.addEdge(nodeKate, nodeMac)
+console.log(nodeKate)
+graph.breadthFirstGraph(nodeKate)
 
 // console.log(graph.getNeigbors(nodeKate))
+
+
+
+module.exports = Graph;
