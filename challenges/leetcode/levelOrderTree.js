@@ -1,3 +1,5 @@
+'use strict';
+
 var levelOrderBottom = function(root) {
     if(root === null || root.val === null) {
         return [];
